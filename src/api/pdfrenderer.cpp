@@ -361,7 +361,7 @@ char* TessPDFRenderer::GetPDFTextObjects(TessBaseAPI* api,
   ResultIterator *res_it = api->GetIterator();
   while (!res_it->Empty(RIL_BLOCK)) {
     if (res_it->IsAtBeginningOf(RIL_BLOCK)) {
-      pdf_str += "BT\n3 Tr";     // Begin text object, use invisible ink
+      pdf_str += "BT\n1 Tr";     // Begin text object, use invisible ink
       old_fontsize = 0;          // Every block will declare its fontsize
       new_block = true;          // Every block will declare its affine matrix
     }
