@@ -473,7 +473,7 @@ char* TessPDFRenderer::GetPDFTextObjects(TessBaseAPI* api,
     } while (!res_it->Empty(RIL_BLOCK) && !res_it->IsAtBeginningOf(RIL_WORD));
     if (word_length > 0 && pdf_word_len > 0 && fontsize > 0) {
       double h_stretch =
-          kCharWidth * prec(100.0 * word_length / (fontsize * pdf_word_len));
+          kCharWidth * prec(90.0 * word_length / (fontsize * pdf_word_len));
       pdf_str.add_str_double("", h_stretch);
       pdf_str += " Tz";          // horizontal stretch
       pdf_str += " [ <";
