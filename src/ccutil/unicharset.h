@@ -508,7 +508,9 @@ class UNICHARSET {
   // Return the isdigit property of the given unichar.
   bool get_isdigit(UNICHAR_ID unichar_id) const {
     if (INVALID_UNICHAR_ID == unichar_id) return false;
-    ASSERT_HOST(contains_unichar_id(unichar_id));
+    if (!contains_unichar_id(unichar_id)) {
+	  return false;
+    }
     return unichars[unichar_id].properties.isdigit;
   }
 
